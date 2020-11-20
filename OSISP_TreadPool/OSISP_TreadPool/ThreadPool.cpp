@@ -32,8 +32,13 @@ DWORD WINAPI ThreadPool::Task(void* args)
     std::function<void()> task;
     while (!exitFlag)
     {
+        while (tasks.empty() && !exitFlag)
+        {
+            Sleep(30);
+        }
         if (!tasks.empty())
         {
+       
             mutex.lock();
             if (!tasks.empty())
             {
