@@ -26,7 +26,7 @@ int main()
     {
         threadPool.AddTask(testProc);
     }
-   
+    Sleep(10);
     threadPool.StopThreads();
    
     return 0;

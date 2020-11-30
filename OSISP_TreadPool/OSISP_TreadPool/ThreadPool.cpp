@@ -13,11 +13,18 @@
 std::list<std::function<void()>> ThreadPool::tasks;
 std::mutex ThreadPool::mutex;
 bool ThreadPool::exitFlag = false;
+bool ThreadPool::EndOfTaskFlag = false;
 int ThreadPool::maxThreads;
 int ThreadPool::maxWorkingThreads = 5;
 int ThreadPool::workingThreads = 0;
 HANDLE hThreadArray[255];
 //HANDLE *hThreadArray;
+
+HANDLE ThreadPool::hAccess;
+HANDLE ThreadPool::hFull;
+
+
+
 void ThreadPool::WriteLogAndConsole(std::string message)
 {
     std::cout << message << std::endl;
@@ -32,36 +39,36 @@ DWORD WINAPI ThreadPool::Task(void* args)
     std::function<void()> task;
     while (!exitFlag)
     {
-        while (tasks.empty() && !exitFlag)
-        {
-            Sleep(30);
-        }
+        
+            WaitForSingleObject(
+                hFull,	// pointer to the semaphore
+                50		// waiting interval
+            );
+        
+         WaitForSingleObject(
+                hAccess,	// pointer to the semaphore
+                INFINITE		//waiting interval
+            );
+        
         if (!tasks.empty())
         {
-       
-            mutex.lock();
-            if (!tasks.empty())
-            {
-                task = tasks.front();
-                tasks.pop_front();
-            }
-            else
-            {
-                mutex.unlock();
-                continue;
-            }
-            mutex.unlock();
-
-            try
-            {
-                task();
-            }
-            catch (const std::exception& e)
-            {
-                WriteLogAndConsole(e.what());
-            }
-            workingThreads--;
+            task = tasks.front();
+            tasks.pop_front();
         }
+       
+         ReleaseSemaphore(
+                hAccess,	// pointer to the semaphore
+                1,		// changes the counter to 1
+                NULL);
+         try
+         {
+             task();
+         }
+         catch (const std::exception& e)
+         {
+             WriteLogAndConsole(e.what());
+         }
+         workingThreads--;
     }
     return 0;
 }
@@ -70,6 +77,18 @@ ThreadPool::ThreadPool(const int n)
 {
     maxThreads = n;
     maxWorkingThreads = 5;
+    hAccess = CreateSemaphore(
+        NULL,	
+        1,	// initial state
+        1,	// max state
+        NULL	// without name
+    );
+    hFull = CreateSemaphore(
+        NULL,	// no atributies
+        0,	// initial state
+        10000,	// max state
+        NULL	// without name
+    );
     //*hThreadArray = new HANDLE[n];
     DWORD threadId;
     for (int i = 0; i < maxWorkingThreads; i++)
@@ -82,13 +101,21 @@ ThreadPool::ThreadPool(const int n)
     }
 
 }
+void ThreadPool::Add(std::function<void()> task)
+{
+    tasks.push_back(task);
+    ReleaseSemaphore(
+        hFull,	// pointer to the semaphore
+        1,		// changes the counter to 1
+        NULL);
+    workingThreads++;
+    WriteLogAndConsole("Add new task");
+}
 void ThreadPool::AddTask(std::function<void()> task)
 {
     if (workingThreads < maxWorkingThreads)
     {
-        tasks.push_back(task);
-        workingThreads++;
-        WriteLogAndConsole("Add new task");
+        ThreadPool::Add(task);
     }
     else
     {
@@ -102,21 +129,21 @@ void ThreadPool::AddTask(std::function<void()> task)
             stream << "Thread " << threadId << " was create";
             ThreadPool::WriteLogAndConsole(stream.str());
 
-            tasks.push_back(task);
-            workingThreads++;
-            WriteLogAndConsole("Add new task");
+            ThreadPool::Add(task);
         }
     }
 }
 
 void ThreadPool::StopThreads()
 {
+    EndOfTaskFlag = true;
     exitFlag = true;
     WaitForMultipleObjects(maxWorkingThreads, hThreadArray, TRUE, INFINITE);
-
+    CloseHandle(hAccess);
+    CloseHandle(hFull);
     for (int i = 0; i < maxWorkingThreads; i++)
     {
         CloseHandle(hThreadArray[i]);
     }
-    // delete[] hThreadArray;
+   
 }

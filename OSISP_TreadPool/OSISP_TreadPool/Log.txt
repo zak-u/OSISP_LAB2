@@ -149,3 +149,253 @@ Add new task
 Add new task
 Add new task
 Add new task
+Thread 9172 was create
+Thread 2436 was create
+Thread 8896 was create
+Thread 148 was create
+Thread 6648 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+WARNING: The maximum allowed number of running threads has been exceeded
+WARNING: The maximum allowed number of running threads has been exceeded
+WARNING: The maximum allowed number of running threads has been exceeded
+Add new task
+Thread 5160 was create
+Thread 17604 was create
+Thread 13760 was create
+Thread 17780 was create
+Thread 19160 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+Thread 18392 was create
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+Thread 8496 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Thread 18916 was create
+Thread 5208 was create
+Thread 16148 was create
+Thread 18332 was create
+Thread 19432 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+Thread 7784 was create
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+Add new task
+Add new task
+Add new task
+Thread 19372 was create
+Thread 1772 was create
+Thread 10652 was create
+Thread 17144 was create
+Thread 10084 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+Thread 7816 was create
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+Add new task
+Add new task
+Add new task
+Thread 19632 was create
+bad function call
+bad function call
+Thread 19636 was create
+Thread 19648 was create
+Thread 19652 was create
+Thread 19656 was create
+bad function call
+bad function call
+Add new task
+Add new task
+Add new task
+Add new task
+bad function call
+bad function call
+bad function call
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+Thread 20024 was create
+Thread 20028 was create
+bad function call
+Thread 3268 was create
+bad function call
+Thread 7668 was create
+Thread 2580 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+Thread 18416 was create
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+Thread 12324 was create
+Add new task
+Add new task
+Thread 18828 was create
+Thread 2736 was create
+Thread 11280 was create
+Thread 18944 was create
+Thread 19332 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+Thread 2712 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+Thread 13064 was create
+Thread 19936 was create
+Thread 20408 was create
+Thread 18688 was create
+Thread 8628 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+Thread 14412 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+Thread 19516 was create
+Thread 20396 was create
+Thread 6032 was create
+Thread 6596 was create
+Thread 6040 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+Thread 9496 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Thread 18880 was create
+Thread 9280 was create
+Thread 5632 was create
+Thread 9704 was create
+Thread 18024 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+Thread 7744 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Thread 9992 was create
+bad function call
+bad function call
+bad function call
+bad function call
+bad function call
+bad function call
+Thread 20048 was create
+bad function call
+Thread 5004 was create
+bad function call
+bad function call
+bad function call
+bad function call
+Thread 18740 was create
+bad function call
+bad function call
+bad function call
+bad function call
+bad function call
+bad function call
+ate
+bad function call
+bad function call
+bad function call
+Add new task
+all
+bad function call
+bad function call
+bad function call
+bad function call
+Add new task
+bad function call
+bad function call
+Add new task
+bad function call
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+Thread 7444 was create
+Thread 10844 was create
+Thread 3328 was create
+Thread 8244 was create
+Thread 18604 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+Thread 4852 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Thread 8984 was create
+Thread 16636 was create
+Thread 15880 was create
+Thread 19212 was create
+Thread 20288 was create
+Add new task
+Add new task
+Add new task
+Add new task
+Add new task
+WARNING: The maximum allowed number of running threads has been exceeded
+WARNING: The maximum allowed number of running threads has been exceeded
+Add new task
+Add new task
+Add new task
